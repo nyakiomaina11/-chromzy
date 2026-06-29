@@ -1,0 +1,102 @@
+/* ============================================================
+   Interaction layer — hover, zoom, and tactile micro-motion
+   applied across every section. Respects reduced-motion.
+   ============================================================ */
+
+/* ---- Plate / figure zoom on hover ---- */
+.figure__frame { overflow: hidden; transition: border-color var(--transition); }
+.figure__frame canvas,
+.figure__frame img {
+  transition: transform 0.7s var(--ease-out), filter 0.7s var(--ease-out);
+  transform-origin: center;
+}
+
+.figure:hover { transform: translateY(-5px); }
+.figure { transition: transform 0.5s var(--ease-out); }
+
+.figure:hover .figure__frame,
+.is-zoom:hover { border-color: var(--ink); }
+
+.figure:hover .figure__frame canvas,
+.figure:hover .figure__frame img,
+.is-zoom:hover canvas,
+.is-zoom:hover img { transform: scale(1.08); }
+
+.figure--soon:hover { transform: none; }
+.figure--soon:hover .figure__frame img {
+  transform: scale(1.04);
+  filter: blur(5px);
+}
+
+/* pointer affordance on interactive targets (native cursor when ring is off) */
+[data-plate-interactive],
+.collection-card,
+.btn,
+a {
+  cursor: pointer;
+}
+
+/* caption shifts subtly with the lift */
+.figure__cap { transition: border-color var(--transition); }
+.figure:hover .figure__cap { border-color: var(--line-strong); }
+.figure:hover .figure__cap .is-title { color: var(--spot-deep); }
+
+/* ---- Masthead bar items ---- */
+.masthead__bar > span { transition: color var(--transition); }
+.masthead__bar:hover > span { color: var(--ink-faint); }
+.masthead__bar > span:hover { color: var(--spot-deep) !important; }
+
+/* ---- Spec rows light up on hover ---- */
+.spec__row { transition: background 0.25s, padding-left 0.25s; }
+.spec__row:hover { background: var(--paper-sunk); padding-left: 8px; padding-right: 8px; }
+.spec__row:hover .spec__key { color: var(--ink); }
+
+/* ---- Section markers pulse the square ---- */
+.sec-mark { transition: color var(--transition); }
+.sec-mark::before { transition: transform 0.4s var(--ease-spring, var(--ease-out)); }
+.sec-mark:hover::before { transform: rotate(45deg) scale(1.2); }
+
+/* ---- Living plate mount: lift + frame ---- */
+.plate-mount { transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out); }
+.plate-mount:hover { transform: translateY(-4px); box-shadow: 12px 14px 0 -2px var(--hair); }
+
+/* ---- Mint card hover ---- */
+.mint-card { transition: box-shadow 0.5s var(--ease-out); }
+.mint-card:hover { box-shadow: 14px 16px 0 -3px var(--hair); }
+
+/* ---- Team cards ---- */
+.team-card { transition: transform 0.5s var(--ease-out); }
+.team-card:hover { transform: translateY(-5px); }
+.team-card__frame { overflow: hidden; }
+.team-card__frame canvas { transition: transform 0.7s var(--ease-out); }
+.team-card:hover .team-card__frame canvas { transform: scale(1.08); }
+.team-card__name { transition: color var(--transition); }
+.team-card:hover .team-card__name { color: var(--spot-deep); }
+
+/* ---- Roadmap / voyage interactions ---- */
+.voyage__port { transition: transform 0.5s var(--ease-out); }
+.voyage__port:hover { transform: translateY(-4px); }
+.voyage__port:hover .voyage__seal { transform: rotate(-8deg) scale(1.08); }
+.voyage__title { transition: color var(--transition); }
+.voyage__port:hover .voyage__title { color: var(--spot-deep); }
+
+/* ---- Buttons: tactile press ---- */
+.btn { transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.18s var(--ease-out); }
+.btn:active { transform: translateY(1px) scale(0.99); }
+
+/* ---- Footer + nav links already animated; add tag hover ---- */
+.tag { transition: border-color var(--transition), color var(--transition), transform var(--transition); }
+.tag:hover { border-color: var(--ink); color: var(--ink); transform: translateY(-2px); }
+
+/* ---- Accordion row lift ---- */
+.accordion__trigger { transition: color var(--transition), padding-left var(--transition); }
+.accordion__trigger:hover { padding-left: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .figure, .figure__frame canvas, .figure__frame img,
+  .plate-mount, .mint-card, .team-card, .team-card__frame canvas,
+  .voyage__port, .voyage__seal, .btn, .tag, .sec-mark::before {
+    transition: none !important;
+    transform: none !important;
+  }
+}

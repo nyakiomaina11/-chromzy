@@ -1,0 +1,290 @@
+/* ============ Reveal / scroll-in ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Editorial line-mask reveal for big headings */
+.reveal-line {
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  transform: translateY(8px);
+  transition: opacity 0.9s var(--ease-editorial), clip-path 0.9s var(--ease-editorial),
+    transform 0.9s var(--ease-editorial);
+}
+
+.reveal-line.is-visible {
+  opacity: 1;
+  clip-path: inset(0 0 -10% 0);
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.stagger.is-visible > * { opacity: 1; transform: none; }
+.stagger.is-visible > *:nth-child(1) { transition-delay: 0s; }
+.stagger.is-visible > *:nth-child(2) { transition-delay: 0.07s; }
+.stagger.is-visible > *:nth-child(3) { transition-delay: 0.14s; }
+.stagger.is-visible > *:nth-child(4) { transition-delay: 0.21s; }
+.stagger.is-visible > *:nth-child(5) { transition-delay: 0.28s; }
+.stagger.is-visible > *:nth-child(6) { transition-delay: 0.35s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-line, .stagger > * {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    transition: none;
+  }
+}
+
+/* ============ Counters ============ */
+[data-count] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ============ Cursor (desktop, subtle ink ring) ============ */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out), opacity 0.25s;
+  opacity: 0;
+  mix-blend-mode: multiply;
+}
+
+body.has-cursor { cursor: none; }
+
+body.has-cursor *:not(input):not(textarea):not(select):not([contenteditable="true"]) {
+  cursor: none !important;
+}
+
+body.has-cursor .cursor-ring { opacity: 1; }
+
+body.has-cursor .cursor-ring.is-hidden { opacity: 0; }
+
+.cursor-ring.is-hot {
+  width: 56px;
+  height: 56px;
+  border-color: var(--spot);
+}
+
+/* ============ Drift parallax (signature hero interaction) ============ */
+[data-drift] {
+  will-change: transform;
+  transition: transform 0.6s var(--ease-out);
+}
+
+/* ============ Page chrome: skip link ============ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 500;
+  padding: 0.75rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.skip-link:focus { top: 1rem; }
+
+/* ============ Scroll progress (hairline) ============ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: calc(var(--z-nav) + 1);
+  background: transparent;
+  pointer-events: none;
+}
+
+.scroll-progress__fill {
+  height: 100%;
+  width: 0;
+  background: var(--spot);
+}
+
+/* ============ Page loader (light, typographic) ============ */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  transition: opacity 0.6s var(--ease-out), visibility 0.6s;
+}
+
+.page-loader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-loader__inner { text-align: center; }
+
+.page-loader__mark {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.page-loader__bar {
+  width: 180px;
+  height: 1px;
+  background: var(--line);
+  margin: 1.25rem auto 0;
+  overflow: hidden;
+}
+
+.page-loader__fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: loader-fill 1.6s var(--ease-editorial) forwards;
+}
+
+@keyframes loader-fill {
+  to { transform: scaleX(1); }
+}
+
+.page-loader__text {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ============ Modal (plate detail) ============ */
+.nft-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.nft-modal[hidden] { display: none; }
+
+.nft-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgb(22 20 15 / 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.nft-modal__panel {
+  position: relative;
+  width: min(100%, 420px);
+  background: var(--card);
+  border: 1px solid var(--ink);
+  padding: 1.5rem;
+  animation: modal-in 0.4s var(--ease-out);
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.nft-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 34px;
+  height: 34px;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--ink-soft);
+  transition: color 0.2s;
+}
+
+.nft-modal__close:hover { color: var(--ink); }
+
+.nft-modal__preview {
+  aspect-ratio: 1;
+  background:
+    repeating-linear-gradient(45deg, var(--paper-sunk) 0 2px, transparent 2px 14px),
+    var(--paper-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.nft-modal__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+}
+
+.nft-modal__score {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--spot-deep);
+  margin-top: 0.4rem;
+}
+
+.nft-modal__traits {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nft-modal__traits li {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loader__fill { animation: none; transform: scaleX(1); }
+  .nft-modal__panel { animation: none; }
+}

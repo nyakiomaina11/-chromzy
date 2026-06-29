@@ -1,0 +1,56 @@
+:root {
+  /* Paper & ink — matched to imported Claude design */
+  --paper: #f4f1ea;          /* page ground, warm off-white */
+  --paper-raised: #efe9dc;   /* deeper panel tone */
+  --paper-sunk: #e7e1d4;     /* inset / hover field */
+  --card: #f7f4ec;           /* near-white plate ground */
+
+  --ink: #1a1611;            /* primary text, warm near-black */
+  --ink-soft: #2e2924;       /* body secondary — solid, readable on paper */
+  --mute: #5a5349;           /* labels, mono meta — AA on 11px+ */
+  --ink-faint: #756d62;      /* faintest captions only */
+
+  /* Spot ink — vermilion primary (design default), cobalt alt */
+  --spot: #ce3a1f;           /* vermilion — primary spot color */
+  --spot-deep: #a82d14;      /* darker vermilion for text/links (AA on paper) */
+  --cobalt: #1b3fcc;         /* secondary spot, used rarely */
+
+  /* Hairlines */
+  --hair: rgb(26 22 17 / 0.20);
+  --hair-faint: rgb(26 22 17 / 0.10);
+  --line: var(--hair);
+  --line-strong: rgb(26 22 17 / 0.40);
+
+  /* Editorial = sharp corners */
+  --radius-sharp: 0px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-pill: 999px;
+
+  /* Type — Bodoni Moda display, Helvetica body, IBM Plex Mono spec */
+  --font-display: "Bodoni Moda", "Didot", Georgia, "Times New Roman", serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Layout rhythm */
+  --nav-height: 64px;
+  --max-width: 1440px;
+  --measure: 62ch;
+  --gutter: clamp(20px, 4vw, 64px);
+  --section-gap: clamp(72px, 11vw, 156px);
+  --col-gap: 24px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-editorial: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --transition: 0.4s var(--ease-out);
+
+  /* Z layers */
+  --z-nav: 100;
+  --z-cursor: 150;
+  --z-modal: 300;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --transition: 0.01ms; }
+}

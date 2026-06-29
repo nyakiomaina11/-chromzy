@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acquire a Plate — CHROMZY Mint</title>
+  <meta name="description" content="Mint a Chromzy colour plate on Solana. 1.5 SOL, one plate per wallet at allowlist, Metaplex Core. Demo wallet flow shown before launch.">
+  <link rel="canonical" href="https://chromzy.com/mint.html">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CHROMZY">
+  <meta property="og:title" content="Acquire a Plate — CHROMZY">
+  <meta property="og:description" content="Mint a generative colour plate on Solana. 1.5 SOL, Metaplex Core.">
+  <meta property="og:url" content="https://chromzy.com/mint.html">
+  <meta property="og:image" content="https://chromzy.com/assets/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23f4f1ea' width='32' height='32'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ce3a1f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="CHROMZY home">Chromzy<span class="nav__logo-dot">.</span></a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="index.html" class="nav__link" data-nav-link>Index</a>
+        <a href="collection.html" class="nav__link" data-nav-link>Plates</a>
+        <a href="mint.html" class="nav__link nav__link--active" data-nav-link>Acquire</a>
+        <a href="roadmap.html" class="nav__link" data-nav-link>Edition</a>
+        <a href="about.html" class="nav__link" data-nav-link>Note</a>
+        <a href="team.html" class="nav__link" data-nav-link>Studio</a>
+        <a href="faq.html" class="nav__link" data-nav-link>FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="btn btn--sm btn--wallet" data-wallet-connect>Connect Wallet</button>
+        <button type="button" class="nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav id="nav-mobile" class="nav__mobile" data-nav-mobile hidden aria-label="Mobile">
+      <a href="index.html" class="nav__mobile-link" data-no="01">Index</a>
+      <a href="collection.html" class="nav__mobile-link" data-no="02">Plates</a>
+      <a href="mint.html" class="nav__mobile-link" data-no="03">Acquire</a>
+      <a href="roadmap.html" class="nav__mobile-link" data-no="04">Edition</a>
+      <a href="about.html" class="nav__mobile-link" data-no="05">Note</a>
+      <a href="team.html" class="nav__mobile-link" data-no="06">Studio</a>
+      <a href="faq.html" class="nav__mobile-link" data-no="07">FAQ</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <header class="page-head reveal">
+        <div class="sec-mark"><span>§ — Acquire</span></div>
+        <h1 class="page-head__title">Acquire</h1>
+        <p class="page-head__lead">Price, chain, and limits are shown before any wallet connects. Connect Phantom, Solflare, or Backpack to begin — the mint transaction itself is wired at launch.</p>
+      </header>
+
+      <section class="section" style="padding-top:clamp(40px,5vw,64px);">
+        <div class="mint-progress reveal" data-mint-progress data-minted="0" data-total="4444">
+          <p class="mint-progress__label"><span>Edition minted</span><span data-mint-progress-count>0 / 4,444</span></p>
+          <div class="mint-progress__track"><div class="mint-progress__fill"></div></div>
+        </div>
+
+        <div class="mint-layout">
+          <div class="reveal">
+            <div class="sec-mark" style="margin-bottom:28px;"><span>Phases</span></div>
+            <div class="mint-phases stagger">
+              <div class="mint-phase">
+                <span class="mint-phase__status" aria-hidden="true"></span>
+                <span class="mint-phase__name">Allowlist</span>
+                <span class="mint-phase__detail">1.5 ◎ · 1 / wallet · opens one week prior</span>
+              </div>
+              <div class="mint-phase is-active">
+                <span class="mint-phase__status" aria-hidden="true"></span>
+                <span class="mint-phase__name">Public</span>
+                <span class="mint-phase__detail">1.5 ◎ · remainder · Autumn 2026</span>
+              </div>
+            </div>
+
+            <div class="spec" style="margin-top:48px;">
+              <div class="spec__row"><span class="spec__key">Chain</span><span>Solana mainnet</span></div>
+              <div class="spec__row"><span class="spec__key">Standard</span><span>Metaplex Core</span></div>
+              <div class="spec__row"><span class="spec__key">Royalty</span><span>5% enforced</span></div>
+              <div class="spec__row"><span class="spec__key">Contract</span><span>CHr0M…DR1FT</span></div>
+            </div>
+          </div>
+
+          <aside class="mint-card reveal">
+            <div class="mint-card__mount">
+              <div class="figure__frame ar-1-1 is-zoom" data-plate-interactive>
+                <canvas data-plate data-plate-interactive data-seed="44" data-plate-chroma="0.12" style="display:block;width:100%;height:100%;"></canvas>
+              </div>
+            </div>
+            <div class="mint-card__price">
+              <span class="mint-card__price-value">1.5</span>
+              <span class="mint-card__price-unit">◎ SOL</span>
+            </div>
+            <p class="mint-card__fine">Plus network fees. Preview is generative — your minted plate is fixed at signing. Click it to re-roll.</p>
+
+            <div class="mint-card__qty">
+              <button type="button" class="mint-card__qty-btn" data-mint-minus aria-label="Decrease quantity">−</button>
+              <span class="mint-card__qty-value" data-mint-qty data-mint-max="1">1</span>
+              <button type="button" class="mint-card__qty-btn" data-mint-plus aria-label="Increase quantity">+</button>
+            </div>
+
+            <div class="mint-card__actions">
+              <button type="button" class="btn btn--primary" data-wallet-connect>Connect Wallet</button>
+              <button type="button" class="btn" data-mint-action disabled>Mint Plate</button>
+            </div>
+
+            <div class="tx-states">
+              <div class="tx-states__title">Transaction flow</div>
+              <div class="tx-step is-done"><span class="tx-step__dot"></span> Review the plate</div>
+              <div class="tx-step is-active"><span class="tx-step__dot"></span> Connect wallet</div>
+              <div class="tx-step"><span class="tx-step__dot"></span> Sign transaction</div>
+              <div class="tx-step"><span class="tx-step__dot"></span> Confirm on-chain</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo">Chromzy<span class="nav__logo-dot">.</span></a>
+          <p>A generative edition of 4,444 colour plates on Solana. Composed, numbered, and signed at the moment of minting.</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">Edition</h3>
+          <a href="collection.html" class="footer__link">Plates</a>
+          <a href="mint.html" class="footer__link">Acquire</a>
+          <a href="roadmap.html" class="footer__link">Edition plan</a>
+          <a href="about.html" class="footer__link">Curatorial note</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Studio</h3>
+          <a href="team.html" class="footer__link">The studio</a>
+          <a href="faq.html" class="footer__link">FAQ</a>
+          <a href="https://x.com/chromzy" class="footer__link" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <a href="https://discord.gg/chromzy" class="footer__link" target="_blank" rel="noopener noreferrer">Discord</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Legal</h3>
+          <a href="terms.html" class="footer__link">Terms</a>
+          <a href="privacy.html" class="footer__link">Privacy</a>
+          <a href="license.html" class="footer__link">License</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>Chromzy © MMXXVI</span>
+        <span>Typeset in Bodoni Moda &amp; IBM Plex Mono</span>
+        <span class="footer__solana"><span class="footer__solana-dot" aria-hidden="true"></span> A generative edition · Solana</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
