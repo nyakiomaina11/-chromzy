@@ -6,8 +6,8 @@
 
 export const COLLECTION = {
   name: "CHROMZY",
-  descriptor: "Generative Colour Plates",
-  tagline: "A finite suite of generative colour plates — no two alike.",
+  descriptor: "Genesis Edition",
+  tagline: "4,444 geometric portraits in nested colour fields — no two alike.",
   supply: 4444,
   chain: "Solana",
   standard: "Metaplex Core",
@@ -20,6 +20,24 @@ export const COLLECTION = {
   studio: "Studio Chromzy",
   contractAddress: "CHr0M…DR1FT",
   year: "MMXXVI",
+};
+
+/** Paste into LaunchMyNFT → Collection → Description */
+export const LAUNCHMYNFT = {
+  scriptVersion: "0.1.5",
+  rpcEndpoint:
+    "https://mainnet.helius-rpc.com/?api-key=218ab1d8-5f13-44e7-a2da-610c40d1b8cb",
+  collectionId: "LqSoiJ03DsNA8heEA6iT",
+  ownerId: "97uZrxmqnvDAYPNNoKy5BWKJMmsupEvmMU1y25gdtpwZ",
+  shortDescription:
+    "CHROMZY Genesis Edition — 4,444 geometric portraits on Solana. Nested colour fields, catalogue plate numbering, no two alike. Mint Pl. 0001 live.",
+  description: `CHROMZY COLLECTION — Genesis Edition · 4,444 on Solana
+
+Chromzy is a fixed edition of generative portrait plates composed like a printed catalogue: nested rectangular colour fields, registration marks, serial numbering, and a vermilion edition tab. Each piece pairs a stylised geometric figure with a unique earthy palette — mustard, olive, terracotta, umber — rendered flat, grainy, and editorial.
+
+Pl. 0001 — Chromzy is the genesis reveal: a bearded profile in layered frames, standing on twin block feet. It sets the visual DNA for every work that follows. No two Chromzys share a palette. There is no post-mint reveal — what you mint is what you keep.
+
+Mint the genesis plate now. The full catalogue of 4,444 follows.`,
 };
 
 export const NOTE = {
@@ -95,8 +113,8 @@ export const TEAM = [
 ];
 
 export const FAQ = [
-  { q: "What is Chromzy?", a: "A fixed edition of 4,444 generative colour plates on Solana. Each plate is a single pass through a colour system — composed, numbered, and signed at the moment of minting." },
-  { q: "What does a plate actually look like?", a: "Four nested rectangular fields in a generated palette, in the lineage of Albers' colour studies. No two plates share a palette. Re-roll the living plate on the home page to see the system at work." },
+  { q: "What is Chromzy?", a: "A Genesis Edition of 4,444 generative portrait plates on Solana. Each piece is a stylised figure locked inside nested colour fields — numbered like a catalogue plate and minted exactly as composed." },
+  { q: "What does a plate actually look like?", a: "A geometric portrait in concentric rectangular frames — mustard, olive, terracotta, and umber — with registration marks and a serial plate number. Pl. 0001 on the home page is the genesis reveal." },
   { q: "How much does it cost to mint?", a: "1.5 ◎ SOL per plate, plus standard Solana network fees. One plate per wallet during allowlist; the remainder release publicly thereafter." },
   { q: "What wallet do I need?", a: "Phantom, Solflare, or any Wallet Standard compatible Solana wallet. Connect on the Mint page when the window opens." },
   { q: "When is the mint?", a: "Autumn 2026. The allowlist opens one week prior. Exact block and date are announced to the studio's correspondents first." },

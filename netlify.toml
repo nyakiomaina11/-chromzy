@@ -1,6 +1,6 @@
 [build]
   publish = "."
-  command = "echo 'Static site - no build'"
+  command = "node scripts/vendor-launchmynft-solana.mjs"
 
 [[headers]]
   for = "/*"
