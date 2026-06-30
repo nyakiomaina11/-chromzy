@@ -25,6 +25,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/main.css">
 
+  <!-- LaunchMyNFT mint embed -->
+  <script>
+    window.ownerId = "97uZrxmqnvDAYPNNoKy5BWKJMmsupEvmMU1y25gdtpwZ";
+    window.collectionId = "EOcX1ICUJgTIm060vFFH";
+  </script>
+  <script type="module" src="https://storage.googleapis.com/scriptslmt/0.1.3/solana.js"></script>
+  <link rel="stylesheet" href="https://storage.googleapis.com/scriptslmt/0.1.3/solana.css">
+
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"VisualArtwork","name":"CHROMZY","artform":"Generative colour plates","artMedium":"Generative pigment, on-chain","description":"A fixed edition of 4,444 generative colour plates on Solana, in the lineage of Josef Albers and the Bauhaus colour course.","url":"https://chromzy.com","numberOfPages":4444,"creator":{"@type":"Organization","name":"Studio Chromzy"}}
   </script>
@@ -100,7 +108,11 @@
           <div class="sec-mark"><span>§ 02 — Genesis Reveal</span></div>
           <div class="living__no">0001</div>
           <p class="living__caption">The Prototype<br>Genesis mascot, on-chain<br>2026</p>
-          <p class="living__note">First reveal from the Chromzy collection. The full edition of 4,444 follows.</p>
+          <p class="living__note">First reveal from the Chromzy collection. Mint #0001 — The Prototype below.</p>
+          <div class="living__mint">
+            <div id="mint-counter"></div>
+            <div id="mint-button-container"></div>
+          </div>
         </div>
         <div class="living__stage reveal">
           <div class="plate-mount">
@@ -110,7 +122,7 @@
           </div>
           <div class="living__strip">
             <span>Pl. 0001 — The Prototype</span>
-            <span>Genesis mascot · edition soon</span>
+            <span>Genesis mascot · mint live</span>
           </div>
         </div>
       </section>

@@ -61,6 +61,45 @@
 .living__no { font-family: var(--font-display); font-weight: 500; font-size: clamp(56px, 7vw, 108px); line-height: 0.88; margin-top: clamp(20px, 3vw, 40px); }
 .living__caption { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; line-height: 1.95; text-transform: uppercase; color: var(--mute); margin: 20px 0 0; }
 .living__note { font-size: 14.5px; line-height: 1.55; max-width: 30ch; margin: 22px 0 0; color: var(--ink-soft); text-wrap: pretty; }
+
+.living__mint {
+  margin-top: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* LaunchMyNFT embed — tuned to editorial chrome */
+.living__mint #mint-counter {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.living__mint #mint-button-container button,
+.living__mint #mint-button-container a {
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  border-radius: 0 !important;
+  border: 1px solid var(--ink) !important;
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  padding: 12px 22px !important;
+  box-shadow: none !important;
+  transition: background var(--transition), color var(--transition) !important;
+}
+
+.living__mint #mint-button-container button:hover,
+.living__mint #mint-button-container a:hover {
+  background: var(--ink) !important;
+  color: var(--paper) !important;
+}
+
 .living__stage { grid-column: 6 / 13; }
 
 .plate-mount { border: 1px solid var(--ink); padding: clamp(16px, 2vw, 30px); background: var(--paper); }
